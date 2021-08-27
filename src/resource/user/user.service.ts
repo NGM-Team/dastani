@@ -32,7 +32,7 @@ export class UserService {
     return this.userRepository.delete(id);
   }
 
-  async findOneByUsername(username: string): Promise<User | undefined> {
-    return this.userRepository.findOne({ login: username });
+  async findOneByLogin(login: string): Promise<User | undefined> {
+    return this.userRepository.findOne({ login: login });
   }
 }

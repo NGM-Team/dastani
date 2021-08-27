@@ -11,7 +11,7 @@ import { SubscriptionTypeService } from './subscription-type.service';
 import { CreateSubscriptionTypeDto } from './dto/create-subscription-type.dto';
 import { UpdateSubscriptionTypeDto } from './dto/update-subscription-type.dto';
 
-@Controller('subscription-type')
+@Controller('subscription-types')
 export class SubscriptionTypeController {
   constructor(
     private readonly subscriptionTypeService: SubscriptionTypeService,
