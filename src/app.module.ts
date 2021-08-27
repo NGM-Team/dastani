@@ -6,10 +6,8 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { JwtAuthGuard } from './auth/jwt-auth.guard';
 import { UserModule } from './resource/user/user.module';
-import { RoleModule } from './resource/role/role.module';
 import { SubscriptionModule } from './resource/subscription/subscription.module';
 import { SubscriptionTypeModule } from './resource/subscription-type/subscription-type.module';
-import { Role } from './resource/role/entities/role.entity';
 import { Subscription } from './resource/subscription/entities/subscription.entity';
 import { SubscriptionType } from './resource/subscription-type/entities/subscription-type.entity';
 import { User } from './resource/user/entities/user.entity';
@@ -23,12 +21,11 @@ import { User } from './resource/user/entities/user.entity';
       username: 'postgres',
       password: 'Betelgeuse99$',
       database: 'dastani',
-      entities: [Role, Subscription, SubscriptionType, User],
+      entities: [Subscription, SubscriptionType, User],
       synchronize: false,
     }),
     AuthModule,
     UserModule,
-    RoleModule,
     SubscriptionModule,
     SubscriptionTypeModule,
   ],

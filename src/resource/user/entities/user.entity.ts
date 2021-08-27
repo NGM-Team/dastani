@@ -1,3 +1,4 @@
+import { Role } from 'src/resource/role/role.enum';
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
@@ -26,8 +27,8 @@ export class User {
   last_modified_date?: any;
   @Column({ type: 'bytea', nullable: true })
   image_url?: any;
-  @Column({ type: 'integer', array: true, nullable: true })
-  authorities?: string[];
   @Column({ type: 'boolean', nullable: true })
   activated?: boolean;
+  @Column({ type: 'enum', enum: Role, array: true, nullable: true })
+  authorities?: Role[];
 }
