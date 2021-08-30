@@ -11,6 +11,8 @@ import { SubscriptionTypeModule } from './resource/subscription-type/subscriptio
 import { Subscription } from './resource/subscription/entities/subscription.entity';
 import { SubscriptionType } from './resource/subscription-type/entities/subscription-type.entity';
 import { User } from './resource/user/entities/user.entity';
+import { AccountModule } from './resource/account/account.module';
+import { UserJwtModule } from './resource/user-jwt/user-jwt.module';
 
 @Module({
   imports: [
@@ -28,6 +30,8 @@ import { User } from './resource/user/entities/user.entity';
     UserModule,
     SubscriptionModule,
     SubscriptionTypeModule,
+    AccountModule,
+    UserJwtModule,
   ],
   controllers: [AppController],
   providers: [
