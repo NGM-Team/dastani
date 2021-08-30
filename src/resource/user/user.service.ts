@@ -4,6 +4,7 @@ import { Repository } from 'typeorm';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { User } from './entities/user.entity';
+import { hash } from '../../app.util';
 
 @Injectable()
 export class UserService {
@@ -12,8 +13,12 @@ export class UserService {
     private userRepository: Repository<User>,
   ) {}
 
-  create(createUserDto: CreateUserDto) {
-    return this.userRepository.insert(createUserDto);
+  async create(createUserDto: CreateUserDto) {
+    const password: string = await hash(createUserDto.password);
+    return this.userRepository.insert({
+      ...createUserDto,
+      password: password,
+    });
   }
 
   findAll() {
